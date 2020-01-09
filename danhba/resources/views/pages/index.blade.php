@@ -21,16 +21,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($con as $c)
                         <tr>
-                            <td>John</td>
-                            <td>850-648-4200</td>
+                            <td>{{$c->name_contact}}</td>
+                            <td>{{$c->number_phone}}</td>
                             <td><ul class="handle">
                                 <li><button class="btn-danger">Delete</button></li>
                                 <li>|</li>
                                 <li><button type="button" class="btn-info" data-toggle="modal" data-target="#myModal">update</button></li>
                             </ul></td>
                         </tr>
-                        <tr>
+                        @endforeach
+                        <!-- <tr>
                             <td>Mary</td>
                             <td>850-648-4200</td>
                             <td><ul class="handle">
@@ -47,7 +49,7 @@
                             <li>|</li>
                             <li><button type="button" class="btn-info" data-toggle="modal" data-target="#myModal">update</button></li>
                             </ul></td>
-                        </tr>
+                        </tr> -->
                         </tbody>
                     </table>
                 </div>

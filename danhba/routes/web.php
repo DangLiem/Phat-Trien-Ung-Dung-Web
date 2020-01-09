@@ -20,11 +20,10 @@ Route::get('/master', function() {
     return view('layouts/master');
 });
 
-Route::get('/index', function() {
-    return view('pages/index');
-});
+Route::get('/index', 'MyController@getindex');
 
 Route::get('/login', function() {
     return view('pages/login');
 });
-
+Route::get('orm', 'MyController@ormtest');
+Route::get('qb', 'MyController@qbtest');
