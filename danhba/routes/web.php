@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'MyController@getindex');
 
 Route::get('/master', function() {
     return view('layouts/master');
@@ -27,3 +28,12 @@ Route::get('/login', function() {
 });
 Route::get('orm', 'MyController@ormtest');
 Route::get('qb', 'MyController@qbtest');
+
+Route::get('loc/{cateID}', [
+    'as' => 'locdanhba',
+    'uses' => 'MyController@getCate'
+]);
+Route::get('tim', [
+    'as' => 'timkiem',
+    'uses' => 'MyController@getFind'
+]);

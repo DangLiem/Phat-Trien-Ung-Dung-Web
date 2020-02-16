@@ -7,8 +7,8 @@
             </div>
             <div class="body-phone">
                 <div class="row search">
-                    <form action="">
-                        <label>Search: <input type="text" name="search" id="search"><a href=""><i class="glyphicon glyphicon-search"></i></a></label>
+                    <form action="{{route('timkiem')}}">
+                        <label>Search: <input type="text" name="search" id="search"><i class="glyphicon glyphicon-search"></i><input type="submit" value="find"></label>
                     </form>
                 </div>
                 <div class="list-phone">
