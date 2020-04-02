@@ -27,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
             $cates = Category::all();
             $view->with('cates', $cates);
         });
+        view()->composer('pages.index', function($view){
+            $cates = Category::all();
+            $view->with('cates', $cates);
+        });
     }
 }

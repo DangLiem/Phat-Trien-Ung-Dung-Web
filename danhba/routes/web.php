@@ -37,3 +37,15 @@ Route::get('tim', [
     'as' => 'timkiem',
     'uses' => 'MyController@getFind'
 ]);
+Route::post('/addcontact',[
+    'as'=>'addcontact',
+    'uses'=>'MyController@addContact'
+]);
+Route::post('/editcontact',[
+    'as'=>'editcontact',
+    'uses'=>'MyController@editContact'
+]);
+Route::get('/deletecontact/{id}',[
+    'as'=>'deletecontact',
+    'uses'=>'MyController@deleteContact'
+]);

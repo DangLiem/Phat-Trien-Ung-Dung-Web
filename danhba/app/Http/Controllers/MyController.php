@@ -35,6 +35,28 @@ class MyController extends Controller
         $con = Contact::where('name_contact', 'like', "%".$request->search."%")->get();
         return view('pages.index', compact('con'));
     }
-    
+    public function addContact(Request $req){
+        $con = new Contact;
+        $con->name_contact=$req->name;
+        $con->number_phone=$req->tel;
+        $con->id_cat=$req->cat;
+        $con->id_owner='1';
+        $con->save();
+        return redirect()->back();
+    }
+    public function editContact(Request $req){
+        $con = Contact::find($req->id);
+        $con->name_contact=$req->name;
+        $con->number_phone=$req->tel;
+        $con->id_cat=$req->cat;
+        $con->id_owner='1';
+        $con->save();
+        return redirect()->back();
+    }
+    public function deleteContact($id){
+        $con=Contact::find($id);
+        $con->delete();
+        return redirect()->back();
+    }
 
 }
